@@ -1,7 +1,6 @@
-# crawlora-duckduckgo
+# crawlora-duckduckgo — DuckDuckGo API client for Python
 
-Python client for Crawlora's hosted DuckDuckGo API. It calls Crawlora's
-service at [Crawlora](https://crawlora.net/?utm_source=pypi&utm_medium=referral&utm_campaign=platform-clients&utm_content=duckduckgo-python-homepage); it does not run a browser or scrape
+Python client for Crawlora's hosted DuckDuckGo API. It exposes 6 API endpoints covering web, news, image, video, and shopping search plus query suggestions. Requests go to [Crawlora](https://crawlora.net/?utm_source=pypi&utm_medium=referral&utm_campaign=platform-clients&utm_content=duckduckgo-python-homepage); the package does not run a browser or scrape
 DuckDuckGo locally. A Crawlora account and `CRAWLORA_API_KEY` are required,
 and API use is billed under your Crawlora account. Crawlora is independent from and not endorsed by
 DuckDuckGo or its owners.
@@ -67,6 +66,19 @@ asyncio.run(main())
 ```
 
 See the [runnable example](https://github.com/Crawlora-org/crawlora-duckduckgo/blob/main/examples/python.py) for a complete usage example.
+
+## Supported DuckDuckGo API endpoints
+
+This package exposes every route below through direct snake_case methods and the `duckduckgo` group. See the [endpoint and parameter reference](https://github.com/Crawlora-org/crawlora-duckduckgo/blob/main/docs/usage.md) for complete input details.
+
+| Method | Endpoint | API operation | Description |
+| --- | --- | --- | --- |
+| `GET` | `/duckduckgo/image` | `duckduckgo-image` | Search DuckDuckGo image results |
+| `GET` | `/duckduckgo/news` | `duckduckgo-news` | Search DuckDuckGo news results |
+| `GET` | `/duckduckgo/search` | `duckduckgo-search` | Search DuckDuckGo web results |
+| `GET` | `/duckduckgo/shopping` | `duckduckgo-shopping` | Search DuckDuckGo shopping results |
+| `GET` | `/duckduckgo/suggest` | `duckduckgo-suggest` | Suggest DuckDuckGo search queries |
+| `GET` | `/duckduckgo/video` | `duckduckgo-video` | Search DuckDuckGo video results |
 
 ## Configuration
 

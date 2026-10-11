@@ -1,6 +1,6 @@
-# DuckDuckGo client usage
+# DuckDuckGo API endpoint reference and client usage
 
-The `@crawlora-org/duckduckgo` and `crawlora-duckduckgo` packages call Crawlora's hosted API. Set `CRAWLORA_API_KEY` to a key for your Crawlora account before making requests. Service usage is billed under that account. These clients do not run a browser or scrape DuckDuckGo locally; Crawlora is independent from and not endorsed by DuckDuckGo or its owners.
+This reference lists all 6 public DuckDuckGo API endpoints exposed by the `@crawlora-org/duckduckgo` and `crawlora-duckduckgo` packages, covering web, news, image, video, and shopping search plus query suggestions. The clients call Crawlora's hosted API. Set `CRAWLORA_API_KEY` to a key for your Crawlora account before making requests. Service usage is billed under that account. These clients do not run a browser or scrape DuckDuckGo locally; Crawlora is independent from and not endorsed by DuckDuckGo or its owners.
 
 The package tracks the public API contract revision `sha256:5c59c5ab37b393d0e018ef034c0638d14301e8a02f310239be2ce08110cd77b9` bundled with release `0.1.1`. Maintainers can preview daily contract updates with the repository's `Sync live API contract` workflow; unchanged contracts do not produce package releases.
 
