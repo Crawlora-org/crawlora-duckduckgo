@@ -6,7 +6,7 @@ from .operations import OPERATION_COUNT, OPERATION_IDS, PLATFORM
 
 Client = DuckDuckGoClient
 AsyncClient = AsyncDuckDuckGoClient
-__version__ = '0.1.0'
+__version__ = '0.1.1'
 DISPLAY_NAME = 'DuckDuckGo'
 PLATFORM = 'duckduckgo'
 CONTRACT_REVISION = 'sha256:5c59c5ab37b393d0e018ef034c0638d14301e8a02f310239be2ce08110cd77b9'
