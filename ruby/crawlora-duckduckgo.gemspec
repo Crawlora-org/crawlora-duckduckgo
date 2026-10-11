@@ -3,8 +3,8 @@ require_relative "lib/crawlora/duckduckgo/version"
 Gem::Specification.new do |spec|
   spec.name = "crawlora-duckduckgo"
   spec.version = Crawlora::Duckduckgo::VERSION
-  spec.summary = "DuckDuckGo client for the Crawlora hosted API"
-  spec.description = "Credential-free DuckDuckGo API access through Crawlora's hosted service."
+  spec.summary = "DuckDuckGo API client for Crawlora (6 endpoints)"
+  spec.description = "Ruby client for Crawlora's hosted DuckDuckGo API. Covers web, news, image, video, and shopping search plus query suggestions across 6 endpoints."
   spec.authors = ["Crawlora"]
   spec.license = "MIT"
   spec.required_ruby_version = ">= 2.6"

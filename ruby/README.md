@@ -1,6 +1,6 @@
-# Crawlora DuckDuckGo Ruby client
+# Crawlora DuckDuckGo API client for Ruby (`crawlora-duckduckgo`)
 
-This gem calls the Crawlora hosted API at `https://api.crawlora.net/api/v1`. It does not call or scrape DuckDuckGo directly. Requests require your Crawlora API key and use your account's service plan.
+This Ruby gem calls Crawlora's hosted DuckDuckGo API at `https://api.crawlora.net/api/v1`. It exposes 6 endpoints covering web, news, image, video, and shopping search plus query suggestions; it does not call or scrape DuckDuckGo directly. Requests require your Crawlora API key and use your account's service plan.
 
 ## Install
 
@@ -29,5 +29,18 @@ client.close
 ```
 
 Client options include `api_key`, `base_url`, and `timeout`. Ruby stdlib provides the HTTP and JSON support.
+
+## Supported DuckDuckGo API endpoints
+
+Browse every route included in this gem. The [endpoint reference](https://github.com/Crawlora-org/crawlora-duckduckgo/blob/main/docs/usage.md) includes parameter and response details.
+
+| Method | Endpoint | API operation | Description |
+| --- | --- | --- | --- |
+| `GET` | `/duckduckgo/image` | `duckduckgo-image` | Search DuckDuckGo image results |
+| `GET` | `/duckduckgo/news` | `duckduckgo-news` | Search DuckDuckGo news results |
+| `GET` | `/duckduckgo/search` | `duckduckgo-search` | Search DuckDuckGo web results |
+| `GET` | `/duckduckgo/shopping` | `duckduckgo-shopping` | Search DuckDuckGo shopping results |
+| `GET` | `/duckduckgo/suggest` | `duckduckgo-suggest` | Suggest DuckDuckGo search queries |
+| `GET` | `/duckduckgo/video` | `duckduckgo-video` | Search DuckDuckGo video results |
 
 See [Crawlora](https://crawlora.net/?utm_source=rubygems&utm_medium=referral&utm_campaign=platform-clients&utm_content=duckduckgo-ruby-homepage), the [API documentation](https://crawlora.net/docs?utm_source=rubygems&utm_medium=referral&utm_campaign=platform-clients&utm_content=duckduckgo-ruby-api-docs), and [the package repository](https://github.com/Crawlora-org/crawlora-duckduckgo) for account setup, the API operation reference, and release history.

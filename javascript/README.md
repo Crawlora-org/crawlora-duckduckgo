@@ -1,7 +1,7 @@
-# @crawlora-org/duckduckgo
+# @crawlora-org/duckduckgo — DuckDuckGo API client for JavaScript and TypeScript
 
 JavaScript and TypeScript client for Crawlora's hosted DuckDuckGo API.
-It calls [Crawlora](https://crawlora.net/?utm_source=npm&utm_medium=referral&utm_campaign=platform-clients&utm_content=duckduckgo-javascript-homepage); it does not run a browser or scrape DuckDuckGo locally. A Crawlora account and `CRAWLORA_API_KEY` are required, and API use is billed under your Crawlora account. Crawlora is independent from and not endorsed by DuckDuckGo or its owners.
+It exposes 6 API endpoints for web, news, image, video, and shopping search plus query suggestions through [Crawlora](https://crawlora.net/?utm_source=npm&utm_medium=referral&utm_campaign=platform-clients&utm_content=duckduckgo-javascript-homepage). It does not run a browser or scrape DuckDuckGo locally. A Crawlora account and `CRAWLORA_API_KEY` are required, and API use is billed under your Crawlora account. Crawlora is independent from and not endorsed by DuckDuckGo or its owners.
 
 ## Install
 
@@ -40,6 +40,18 @@ group. See the full method and parameter list in the [online reference](https://
 
 Methods return promises and can be awaited. See the [runnable example](https://github.com/Crawlora-org/crawlora-duckduckgo/blob/main/examples/javascript.mjs) for a complete usage example.
 
+## Supported DuckDuckGo API endpoints
+
+This package exposes each route below as a direct method and through the `duckduckgo` group. See the [endpoint and parameter reference](https://github.com/Crawlora-org/crawlora-duckduckgo/blob/main/docs/usage.md) for complete input details.
+
+| Method | Endpoint | API operation | Description |
+| --- | --- | --- | --- |
+| `GET` | `/duckduckgo/image` | `duckduckgo-image` | Search DuckDuckGo image results |
+| `GET` | `/duckduckgo/news` | `duckduckgo-news` | Search DuckDuckGo news results |
+| `GET` | `/duckduckgo/search` | `duckduckgo-search` | Search DuckDuckGo web results |
+| `GET` | `/duckduckgo/shopping` | `duckduckgo-shopping` | Search DuckDuckGo shopping results |
+| `GET` | `/duckduckgo/suggest` | `duckduckgo-suggest` | Suggest DuckDuckGo search queries |
+| `GET` | `/duckduckgo/video` | `duckduckgo-video` | Search DuckDuckGo video results |
 
 ## Configuration
 

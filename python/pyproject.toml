@@ -5,8 +5,9 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "crawlora-duckduckgo"
 version = "0.1.1"
-description = "Typed DuckDuckGo client for the Crawlora hosted API"
+description = "Crawlora DuckDuckGo API client with 6 endpoints for web, news, image, video, and shopping search plus query suggestions"
 readme = "README.md"
+keywords = ["crawlora", "api-client", "web-scraping", "duckduckgo", "web", "news", "image", "video", "shopping-search-query-suggestions"]
 requires-python = ">=3.10"
 license = "MIT"
 license-files = ["LICENSE"]

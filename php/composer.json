@@ -1,6 +1,17 @@
 {
   "name": "crawlora/duckduckgo",
-  "description": "DuckDuckGo client for the Crawlora hosted API",
+  "description": "Crawlora DuckDuckGo API client with 6 endpoints for web, news, image, video, and shopping search plus query suggestions",
+  "keywords": [
+    "crawlora",
+    "api-client",
+    "web-scraping",
+    "duckduckgo",
+    "web",
+    "news",
+    "image",
+    "video",
+    "shopping-search-query-suggestions"
+  ],
   "type": "library",
   "license": "MIT",
   "require": {

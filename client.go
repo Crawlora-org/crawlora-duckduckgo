@@ -1,4 +1,4 @@
-// Package duckduckgo is a focused Go client for Crawlora's DuckDuckGo endpoints.
+// Package duckduckgo is Crawlora's DuckDuckGo API client for 6 endpoints, covering web, news, image, video, and shopping search plus query suggestions.
 // API documentation: https://crawlora.net/docs?utm_source=pkg.go.dev&utm_medium=referral&utm_campaign=platform-clients&utm_content=duckduckgo-go-api-docs
 package duckduckgo
 
