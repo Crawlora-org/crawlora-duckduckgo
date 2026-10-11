@@ -9,7 +9,7 @@ import {
 
 export class DuckDuckGoClient extends CrawloraClient {
   constructor(options = {}) {
-    super({ ...options, userAgent: options.userAgent ?? "crawlora-duckduckgo-js/0.1.0" });
+    super({ ...options, userAgent: options.userAgent ?? "crawlora-duckduckgo-js/0.1.1" });
     this["image"] = (...args) => this.request("duckduckgo-image", ...args);
     this["news"] = (...args) => this.request("duckduckgo-news", ...args);
     this["search"] = (...args) => this.request("duckduckgo-search", ...args);
@@ -28,5 +28,5 @@ export {
   CrawloraServerError
 };
 export { groups, operations, operationCount, OperationIds } from "./operations.js";
-export const VERSION = "0.1.0";
+export const VERSION = "0.1.1";
 export default DuckDuckGoClient;
