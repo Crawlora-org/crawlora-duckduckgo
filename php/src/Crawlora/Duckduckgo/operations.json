@@ -1,0 +1,392 @@
+{
+  "platform": "duckduckgo",
+  "operationCount": 6,
+  "operationIds": [
+    "duckduckgo-image",
+    "duckduckgo-news",
+    "duckduckgo-search",
+    "duckduckgo-shopping",
+    "duckduckgo-suggest",
+    "duckduckgo-video"
+  ],
+  "methods": {
+    "image": "duckduckgo-image",
+    "news": "duckduckgo-news",
+    "search": "duckduckgo-search",
+    "shopping": "duckduckgo-shopping",
+    "suggest": "duckduckgo-suggest",
+    "video": "duckduckgo-video"
+  },
+  "operations": {
+    "duckduckgo-image": {
+      "id": "duckduckgo-image",
+      "method": "GET",
+      "path": "/duckduckgo/image",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "q",
+          "in": "query",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "type": "integer"
+        },
+        {
+          "name": "region",
+          "in": "query",
+          "type": "string"
+        }
+      ],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "description": "Search query",
+          "in": "query",
+          "name": "q",
+          "required": true,
+          "type": "string",
+          "x-example": "openai"
+        },
+        {
+          "description": "1-based page number, defaults to 1",
+          "in": "query",
+          "name": "page",
+          "type": "integer",
+          "x-example": 1
+        },
+        {
+          "description": "DuckDuckGo region/locale code, e.g. us-en, uk-en, wt-wt (worldwide, the default)",
+          "in": "query",
+          "name": "region",
+          "type": "string",
+          "x-example": "us-en"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "duckduckgo-news": {
+      "id": "duckduckgo-news",
+      "method": "GET",
+      "path": "/duckduckgo/news",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "q",
+          "in": "query",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "type": "integer"
+        },
+        {
+          "name": "region",
+          "in": "query",
+          "type": "string"
+        }
+      ],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "description": "Search query",
+          "in": "query",
+          "name": "q",
+          "required": true,
+          "type": "string",
+          "x-example": "openai"
+        },
+        {
+          "description": "1-based page number, defaults to 1",
+          "in": "query",
+          "name": "page",
+          "type": "integer",
+          "x-example": 1
+        },
+        {
+          "description": "DuckDuckGo region/locale code, e.g. us-en, uk-en, wt-wt (worldwide, the default)",
+          "in": "query",
+          "name": "region",
+          "type": "string",
+          "x-example": "us-en"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "duckduckgo-search": {
+      "id": "duckduckgo-search",
+      "method": "GET",
+      "path": "/duckduckgo/search",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "q",
+          "in": "query",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "type": "integer"
+        },
+        {
+          "name": "region",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "time_range",
+          "in": "query",
+          "type": "string",
+          "enum": [
+            "d",
+            "w",
+            "m",
+            "y"
+          ]
+        },
+        {
+          "name": "safe_search",
+          "in": "query",
+          "type": "string",
+          "enum": [
+            "strict",
+            "moderate",
+            "off"
+          ]
+        }
+      ],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "description": "Search query",
+          "in": "query",
+          "name": "q",
+          "required": true,
+          "type": "string",
+          "x-example": "openai"
+        },
+        {
+          "description": "1-based page number, defaults to 1",
+          "in": "query",
+          "name": "page",
+          "type": "integer",
+          "x-example": 1
+        },
+        {
+          "description": "DuckDuckGo region/locale code, e.g. us-en, uk-en, wt-wt (worldwide, the default)",
+          "in": "query",
+          "name": "region",
+          "type": "string",
+          "x-example": "us-en"
+        },
+        {
+          "description": "Restrict results to a recency window",
+          "enum": [
+            "d",
+            "w",
+            "m",
+            "y"
+          ],
+          "in": "query",
+          "name": "time_range",
+          "type": "string"
+        },
+        {
+          "description": "Safe search level, defaults to DuckDuckGo's own moderate setting when omitted",
+          "enum": [
+            "strict",
+            "moderate",
+            "off"
+          ],
+          "in": "query",
+          "name": "safe_search",
+          "type": "string"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "duckduckgo-shopping": {
+      "id": "duckduckgo-shopping",
+      "method": "GET",
+      "path": "/duckduckgo/shopping",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "q",
+          "in": "query",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "region",
+          "in": "query",
+          "type": "string"
+        }
+      ],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "description": "Search query",
+          "in": "query",
+          "name": "q",
+          "required": true,
+          "type": "string",
+          "x-example": "running shoes"
+        },
+        {
+          "description": "DuckDuckGo market code, e.g. us-en, uk-en",
+          "in": "query",
+          "name": "region",
+          "type": "string",
+          "x-example": "us-en"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "duckduckgo-suggest": {
+      "id": "duckduckgo-suggest",
+      "method": "GET",
+      "path": "/duckduckgo/suggest",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "q",
+          "in": "query",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "count",
+          "in": "query",
+          "type": "integer"
+        },
+        {
+          "name": "region",
+          "in": "query",
+          "type": "string"
+        }
+      ],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "description": "Search query prefix",
+          "in": "query",
+          "name": "q",
+          "required": true,
+          "type": "string",
+          "x-example": "openai"
+        },
+        {
+          "description": "Suggestions to return; defaults to 8, clamped to 1..8",
+          "in": "query",
+          "maximum": 8,
+          "minimum": 1,
+          "name": "count",
+          "type": "integer",
+          "x-example": 8
+        },
+        {
+          "description": "DuckDuckGo region code such as us-en, uk-en, de-de, or wt-wt (worldwide, the default)",
+          "in": "query",
+          "name": "region",
+          "type": "string",
+          "x-example": "us-en"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "duckduckgo-video": {
+      "id": "duckduckgo-video",
+      "method": "GET",
+      "path": "/duckduckgo/video",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "q",
+          "in": "query",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "type": "integer"
+        },
+        {
+          "name": "region",
+          "in": "query",
+          "type": "string"
+        }
+      ],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "description": "Search query",
+          "in": "query",
+          "name": "q",
+          "required": true,
+          "type": "string",
+          "x-example": "openai"
+        },
+        {
+          "description": "1-based page number, defaults to 1",
+          "in": "query",
+          "name": "page",
+          "type": "integer",
+          "x-example": 1
+        },
+        {
+          "description": "DuckDuckGo region/locale code, e.g. us-en, uk-en, wt-wt (worldwide, the default)",
+          "in": "query",
+          "name": "region",
+          "type": "string",
+          "x-example": "us-en"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    }
+  }
+}

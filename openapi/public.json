@@ -1,0 +1,999 @@
+{
+  "basePath": "/api/v1",
+  "definitions": {
+    "app.Response": {
+      "description": "The Response struct is used for wrapping the API response with a code, message, and data.",
+      "properties": {
+        "code": {
+          "description": "Code is the HTTP status code or a custom code used to indicate the result of the request\n@example 200",
+          "type": "integer"
+        },
+        "data": {
+          "description": "Data is the response data (can be any object or null)\n@example {\"id\": 1, \"name\": \"John Doe\"}"
+        },
+        "msg": {
+          "description": "Msg is the message that describes the result of the request\n@example \"Request successful\""
+        }
+      },
+      "type": "object"
+    },
+    "duckduckgo.ImageResponse": {
+      "properties": {
+        "pagination": {
+          "$ref": "#/definitions/duckduckgo.SearchPagination"
+        },
+        "query": {
+          "example": "openai",
+          "type": "string"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/duckduckgo.ImageResult"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "duckduckgo.ImageResult": {
+      "properties": {
+        "height": {
+          "example": 800,
+          "type": "integer"
+        },
+        "hostname": {
+          "example": "example.com",
+          "type": "string"
+        },
+        "image_url": {
+          "example": "https://example.com/openai-logo.jpg",
+          "type": "string"
+        },
+        "position": {
+          "example": 1,
+          "type": "integer"
+        },
+        "thumbnail": {
+          "example": "https://example.com/openai-logo-thumb.jpg",
+          "type": "string"
+        },
+        "title": {
+          "example": "OpenAI logo",
+          "type": "string"
+        },
+        "url": {
+          "example": "https://example.com/openai-logo",
+          "type": "string"
+        },
+        "width": {
+          "example": 1200,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "duckduckgo.NewsResponse": {
+      "properties": {
+        "pagination": {
+          "$ref": "#/definitions/duckduckgo.SearchPagination"
+        },
+        "query": {
+          "example": "openai",
+          "type": "string"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/duckduckgo.NewsResult"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "duckduckgo.NewsResult": {
+      "properties": {
+        "excerpt": {
+          "example": "OpenAI today announced...",
+          "type": "string"
+        },
+        "position": {
+          "example": 1,
+          "type": "integer"
+        },
+        "published_at": {
+          "example": 1721418540,
+          "type": "integer"
+        },
+        "relative_time": {
+          "example": "2 hours ago",
+          "type": "string"
+        },
+        "source": {
+          "example": "TechCrunch",
+          "type": "string"
+        },
+        "thumbnail": {
+          "example": "https://example.com/thumb.jpg",
+          "type": "string"
+        },
+        "title": {
+          "example": "OpenAI announces new model",
+          "type": "string"
+        },
+        "url": {
+          "example": "https://example.com/openai-announces-new-model",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "duckduckgo.SearchPagination": {
+      "properties": {
+        "next_page": {
+          "example": 2,
+          "type": "integer"
+        },
+        "page": {
+          "example": 1,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "duckduckgo.SearchResponse": {
+      "properties": {
+        "pagination": {
+          "$ref": "#/definitions/duckduckgo.SearchPagination"
+        },
+        "query": {
+          "example": "openai",
+          "type": "string"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/duckduckgo.SearchResult"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "duckduckgo.SearchResult": {
+      "properties": {
+        "description": {
+          "example": "OpenAI is an AI research and deployment company. Our mission is to ensure that artificial general intelligence benefits all of humanity.",
+          "type": "string"
+        },
+        "hostname": {
+          "example": "openai.com",
+          "type": "string"
+        },
+        "position": {
+          "example": 1,
+          "type": "integer"
+        },
+        "title": {
+          "example": "OpenAI | Research & Deployment",
+          "type": "string"
+        },
+        "url": {
+          "example": "https://openai.com/",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "duckduckgo.ShoppingPageInfo": {
+      "properties": {
+        "page": {
+          "example": 1,
+          "type": "integer"
+        },
+        "total_pages": {
+          "example": 16,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "duckduckgo.ShoppingResponse": {
+      "properties": {
+        "page_info": {
+          "$ref": "#/definitions/duckduckgo.ShoppingPageInfo"
+        },
+        "query": {
+          "example": "running shoes",
+          "type": "string"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/duckduckgo.ShoppingResult"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "duckduckgo.ShoppingResult": {
+      "properties": {
+        "brand": {
+          "example": "On",
+          "type": "string"
+        },
+        "description": {
+          "example": "Lightweight running shoe with CloudTec cushioning.",
+          "type": "string"
+        },
+        "image": {
+          "example": "https://example.com/shoe.jpg",
+          "type": "string"
+        },
+        "low_price": {
+          "example": "$119.99",
+          "type": "string"
+        },
+        "merchant": {
+          "example": "www.example.com",
+          "type": "string"
+        },
+        "position": {
+          "example": 1,
+          "type": "integer"
+        },
+        "price": {
+          "example": "$139.99",
+          "type": "string"
+        },
+        "rating": {
+          "example": 4.5,
+          "type": "number"
+        },
+        "review_count": {
+          "example": 128,
+          "type": "integer"
+        },
+        "title": {
+          "example": "On Running Cloud 6 Sneakers",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "duckduckgo.VideoResponse": {
+      "properties": {
+        "pagination": {
+          "$ref": "#/definitions/duckduckgo.SearchPagination"
+        },
+        "query": {
+          "example": "openai",
+          "type": "string"
+        },
+        "results": {
+          "items": {
+            "$ref": "#/definitions/duckduckgo.VideoResult"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "duckduckgo.VideoResult": {
+      "properties": {
+        "description": {
+          "example": "An introduction to OpenAI.",
+          "type": "string"
+        },
+        "duration": {
+          "example": "5:32",
+          "type": "string"
+        },
+        "position": {
+          "example": 1,
+          "type": "integer"
+        },
+        "published_at": {
+          "example": "2023-03-01T12:00:00.0000000",
+          "type": "string"
+        },
+        "publisher": {
+          "example": "YouTube",
+          "type": "string"
+        },
+        "thumbnail": {
+          "example": "https://example.com/thumb.jpg",
+          "type": "string"
+        },
+        "title": {
+          "example": "What is OpenAI?",
+          "type": "string"
+        },
+        "uploader": {
+          "example": "OpenAI",
+          "type": "string"
+        },
+        "url": {
+          "example": "https://www.youtube.com/watch?v=abc123",
+          "type": "string"
+        },
+        "view_count": {
+          "example": 123456,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "duckduckgo.imageResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/duckduckgo.ImageResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "duckduckgo.newsResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/duckduckgo.NewsResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "duckduckgo.searchResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/duckduckgo.SearchResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "duckduckgo.shoppingResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/duckduckgo.ShoppingResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "duckduckgo.suggestResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/suggest.Response"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "duckduckgo.videoResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/duckduckgo.VideoResponse"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "suggest.Response": {
+      "properties": {
+        "query": {
+          "example": "openai",
+          "type": "string"
+        },
+        "suggestions": {
+          "items": {
+            "$ref": "#/definitions/suggest.Suggestion"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "suggest.Suggestion": {
+      "properties": {
+        "position": {
+          "example": 1,
+          "type": "integer"
+        },
+        "query": {
+          "example": "openai api key",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    }
+  },
+  "host": "api.crawlora.net",
+  "info": {
+    "contact": {
+      "email": "support@crawlora.net",
+      "name": "API Support",
+      "url": "https://crawlora.net"
+    },
+    "description": "Crawlora is a hosted web-data and SERP API: call documented REST endpoints and get normalized JSON instead of HTML to parse — across search/SERP, maps and local, e-commerce, app stores, social, media and finance. One API key; Crawlora runs the proxy rotation, headless browsers and parsing behind the scenes. Billed pay-on-success: charged only on a successful 2xx response, 1-10 credits per call, with a free tier of 2,000 credits per month and no card. A hosted MCP server (mcp.crawlora.net/mcp) exposes the same catalog as agent tools. Search endpoints accept `q` as a universal alias for whichever search-term parameter they document (`query`, `term`, `keyword`, or Amazon's `k`), so one parameter name works across the whole catalog; an explicitly supplied documented name always wins.",
+    "license": {
+      "name": "Crawlora Terms of Service",
+      "url": "https://crawlora.net/terms"
+    },
+    "termsOfService": "https://crawlora.net/terms",
+    "title": "Crawlora API",
+    "version": "1.2",
+    "x-logo": {
+      "altText": "Crawlora",
+      "backgroundColor": "#FFFFFF",
+      "url": "https://raw.githubusercontent.com/Crawlora-org/crawlora-mcp/main/assets/logo-400x400.png"
+    }
+  },
+  "paths": {
+    "/duckduckgo/image": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns normalized DuckDuckGo image results for a query string: title, source page URL, image URL, thumbnail, dimensions, and hostname, plus page-based pagination. Results are fetched from DuckDuckGo's own image JSON API.",
+        "operationId": "duckduckgo-image",
+        "parameters": [
+          {
+            "description": "Search query",
+            "in": "query",
+            "name": "q",
+            "required": true,
+            "type": "string",
+            "x-example": "openai"
+          },
+          {
+            "description": "1-based page number, defaults to 1",
+            "in": "query",
+            "name": "page",
+            "type": "integer",
+            "x-example": 1
+          },
+          {
+            "description": "DuckDuckGo region/locale code, e.g. us-en, uk-en, wt-wt (worldwide, the default)",
+            "in": "query",
+            "name": "region",
+            "type": "string",
+            "x-example": "us-en"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/duckduckgo.imageResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Search DuckDuckGo image results",
+        "tags": [
+          "duckduckgo"
+        ]
+      }
+    },
+    "/duckduckgo/news": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns normalized DuckDuckGo news results for a query string: title, destination URL, source, excerpt, thumbnail, and relative/published time, plus page-based pagination. Results are fetched from DuckDuckGo's own news JSON API.",
+        "operationId": "duckduckgo-news",
+        "parameters": [
+          {
+            "description": "Search query",
+            "in": "query",
+            "name": "q",
+            "required": true,
+            "type": "string",
+            "x-example": "openai"
+          },
+          {
+            "description": "1-based page number, defaults to 1",
+            "in": "query",
+            "name": "page",
+            "type": "integer",
+            "x-example": 1
+          },
+          {
+            "description": "DuckDuckGo region/locale code, e.g. us-en, uk-en, wt-wt (worldwide, the default)",
+            "in": "query",
+            "name": "region",
+            "type": "string",
+            "x-example": "us-en"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/duckduckgo.newsResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Search DuckDuckGo news results",
+        "tags": [
+          "duckduckgo"
+        ]
+      }
+    },
+    "/duckduckgo/search": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns normalized DuckDuckGo web search results for a query string: title, destination URL, description, and hostname, plus page-based pagination. DuckDuckGo wraps every result link in its own click-tracking redirect; this endpoint always returns the decoded destination URL, never the raw redirect link. Results are fetched from DuckDuckGo's own server-rendered search page.",
+        "operationId": "duckduckgo-search",
+        "parameters": [
+          {
+            "description": "Search query",
+            "in": "query",
+            "name": "q",
+            "required": true,
+            "type": "string",
+            "x-example": "openai"
+          },
+          {
+            "description": "1-based page number, defaults to 1",
+            "in": "query",
+            "name": "page",
+            "type": "integer",
+            "x-example": 1
+          },
+          {
+            "description": "DuckDuckGo region/locale code, e.g. us-en, uk-en, wt-wt (worldwide, the default)",
+            "in": "query",
+            "name": "region",
+            "type": "string",
+            "x-example": "us-en"
+          },
+          {
+            "description": "Restrict results to a recency window",
+            "enum": [
+              "d",
+              "w",
+              "m",
+              "y"
+            ],
+            "in": "query",
+            "name": "time_range",
+            "type": "string"
+          },
+          {
+            "description": "Safe search level, defaults to DuckDuckGo's own moderate setting when omitted",
+            "enum": [
+              "strict",
+              "moderate",
+              "off"
+            ],
+            "in": "query",
+            "name": "safe_search",
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/duckduckgo.searchResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Search DuckDuckGo web results",
+        "tags": [
+          "duckduckgo"
+        ]
+      }
+    },
+    "/duckduckgo/shopping": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns normalized DuckDuckGo shopping results for a query string: title, brand, merchant, description, price, rating, and review count, plus total page count. DuckDuckGo's shopping vertical is ad-funded, syndicated product listings, not organic content; every product link is wrapped in an ad-click-tracking redirect with no clean destination to unwrap, so no destination URL is returned. DuckDuckGo's own pagination token for this vertical is an opaque per-response blob rather than a plain page offset, so only the first page is supported.",
+        "operationId": "duckduckgo-shopping",
+        "parameters": [
+          {
+            "description": "Search query",
+            "in": "query",
+            "name": "q",
+            "required": true,
+            "type": "string",
+            "x-example": "running shoes"
+          },
+          {
+            "description": "DuckDuckGo market code, e.g. us-en, uk-en",
+            "in": "query",
+            "name": "region",
+            "type": "string",
+            "x-example": "us-en"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/duckduckgo.shoppingResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Search DuckDuckGo shopping results",
+        "tags": [
+          "duckduckgo"
+        ]
+      }
+    },
+    "/duckduckgo/suggest": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns DuckDuckGo search-box autocomplete completions for a query prefix, in DuckDuckGo's own ranking order. DuckDuckGo never returns more than 8 suggestions per prefix.",
+        "operationId": "duckduckgo-suggest",
+        "parameters": [
+          {
+            "description": "Search query prefix",
+            "in": "query",
+            "name": "q",
+            "required": true,
+            "type": "string",
+            "x-example": "openai"
+          },
+          {
+            "description": "Suggestions to return; defaults to 8, clamped to 1..8",
+            "in": "query",
+            "maximum": 8,
+            "minimum": 1,
+            "name": "count",
+            "type": "integer",
+            "x-example": 8
+          },
+          {
+            "description": "DuckDuckGo region code such as us-en, uk-en, de-de, or wt-wt (worldwide, the default)",
+            "in": "query",
+            "name": "region",
+            "type": "string",
+            "x-example": "us-en"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/duckduckgo.suggestResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Suggest DuckDuckGo search queries",
+        "tags": [
+          "duckduckgo"
+        ]
+      }
+    },
+    "/duckduckgo/video": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns normalized DuckDuckGo video results for a query string: title, destination URL, description, duration, thumbnail, publisher/uploader, published time, and view count, plus page-based pagination. Results are fetched from DuckDuckGo's own video JSON API.",
+        "operationId": "duckduckgo-video",
+        "parameters": [
+          {
+            "description": "Search query",
+            "in": "query",
+            "name": "q",
+            "required": true,
+            "type": "string",
+            "x-example": "openai"
+          },
+          {
+            "description": "1-based page number, defaults to 1",
+            "in": "query",
+            "name": "page",
+            "type": "integer",
+            "x-example": 1
+          },
+          {
+            "description": "DuckDuckGo region/locale code, e.g. us-en, uk-en, wt-wt (worldwide, the default)",
+            "in": "query",
+            "name": "region",
+            "type": "string",
+            "x-example": "us-en"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/duckduckgo.videoResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Search DuckDuckGo video results",
+        "tags": [
+          "duckduckgo"
+        ]
+      }
+    }
+  },
+  "schemes": [
+    "https"
+  ],
+  "securityDefinitions": {
+    "ApiKeyAuth": {
+      "in": "header",
+      "name": "x-api-key",
+      "type": "apiKey"
+    }
+  },
+  "swagger": "2.0",
+  "tags": [
+    {
+      "name": "duckduckgo"
+    }
+  ]
+}
