@@ -4,7 +4,7 @@
   "description": "Crawlora DuckDuckGo API client with 6 endpoints for web, news, image, video, and shopping search plus query suggestions",
   "homepage": "https://crawlora.net/?utm_source=npm&utm_medium=referral&utm_campaign=platform-clients&utm_content=duckduckgo-javascript-homepage",
   "bugs": { "url": "https://github.com/Crawlora-org/crawlora-duckduckgo/issues" },
-  "keywords": ["crawlora", "api-client", "web-scraping", "duckduckgo", "web", "news", "image", "video", "shopping-search-query-suggestions"],
+  "keywords": ["crawlora", "api-client", "sdk", "web-scraping", "scraping-api", "duckduckgo", "duckduckgo-api", "duckduckgo-scraper", "duckduckgo-data", "duckduckgo-web", "duckduckgo-news", "duckduckgo-image", "duckduckgo-video", "duckduckgo-shopping-search", "duckduckgo-query-suggestions"],
   "type": "module",
   "main": "./src/index.js",
   "types": "./src/index.d.ts",
