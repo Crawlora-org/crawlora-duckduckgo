@@ -474,7 +474,7 @@
         "consumes": [
           "application/json"
         ],
-        "description": "Returns normalized DuckDuckGo image results for a query string: title, source page URL, image URL, thumbnail, dimensions, and hostname, plus page-based pagination. Results are fetched from DuckDuckGo's own image JSON API.",
+        "description": "Returns DuckDuckGo image results for a query string: title, source page URL, image URL, thumbnail, dimensions, and hostname, plus page-based pagination.",
         "operationId": "duckduckgo-image",
         "parameters": [
           {
@@ -557,7 +557,7 @@
         "consumes": [
           "application/json"
         ],
-        "description": "Returns normalized DuckDuckGo news results for a query string: title, destination URL, source, excerpt, thumbnail, and relative/published time, plus page-based pagination. Results are fetched from DuckDuckGo's own news JSON API.",
+        "description": "Returns DuckDuckGo news results for a query string: title, destination URL, source, excerpt, thumbnail, and relative/published time, plus page-based pagination.",
         "operationId": "duckduckgo-news",
         "parameters": [
           {
@@ -640,7 +640,7 @@
         "consumes": [
           "application/json"
         ],
-        "description": "Returns normalized DuckDuckGo web search results for a query string: title, destination URL, description, and hostname, plus page-based pagination. DuckDuckGo wraps every result link in its own click-tracking redirect; this endpoint always returns the decoded destination URL, never the raw redirect link. Results are fetched from DuckDuckGo's own server-rendered search page.",
+        "description": "Returns DuckDuckGo web search results for a query string: title, destination URL, description, and hostname, plus page-based pagination. DuckDuckGo wraps every result link in its own click-tracking redirect; this endpoint always returns the decoded destination URL, never the raw redirect link.",
         "operationId": "duckduckgo-search",
         "parameters": [
           {
@@ -746,7 +746,7 @@
         "consumes": [
           "application/json"
         ],
-        "description": "Returns normalized DuckDuckGo shopping results for a query string: title, brand, merchant, description, price, rating, and review count, plus total page count. DuckDuckGo's shopping vertical is ad-funded, syndicated product listings, not organic content; every product link is wrapped in an ad-click-tracking redirect with no clean destination to unwrap, so no destination URL is returned. DuckDuckGo's own pagination token for this vertical is an opaque per-response blob rather than a plain page offset, so only the first page is supported.",
+        "description": "Returns DuckDuckGo shopping results for a query string: title, brand, merchant, description, price, rating, and review count, plus total page count. DuckDuckGo's shopping vertical is ad-funded, syndicated product listings, not organic content; every product link is wrapped in an ad-click-tracking redirect with no clean destination to unwrap, so no destination URL is returned. DuckDuckGo's own pagination token for this vertical is an opaque per-response blob rather than a plain page offset, so only the first page is supported.",
         "operationId": "duckduckgo-shopping",
         "parameters": [
           {
@@ -901,7 +901,7 @@
         "consumes": [
           "application/json"
         ],
-        "description": "Returns normalized DuckDuckGo video results for a query string: title, destination URL, description, duration, thumbnail, publisher/uploader, published time, and view count, plus page-based pagination. Results are fetched from DuckDuckGo's own video JSON API.",
+        "description": "Returns DuckDuckGo video results for a query string: title, destination URL, description, duration, thumbnail, publisher/uploader, published time, and view count, plus page-based pagination.",
         "operationId": "duckduckgo-video",
         "parameters": [
           {

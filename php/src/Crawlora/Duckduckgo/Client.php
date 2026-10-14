@@ -26,7 +26,7 @@ final class Client
     private ?\Closure $transport;
 
     public const PLATFORM = 'duckduckgo';
-    public const VERSION = '0.1.1';
+    public const VERSION = '0.1.2';
     public const OPERATION_COUNT = 6;
     public const OPERATION_IDS = ["duckduckgo-image", "duckduckgo-news", "duckduckgo-search", "duckduckgo-shopping", "duckduckgo-suggest", "duckduckgo-video"];
 
@@ -57,7 +57,7 @@ JSON, true, 512, JSON_THROW_ON_ERROR);
         $url = $this->buildUrl($operation, $params);
         $headers = [
             'x-api-key: ' . $this->apiKey,
-            'User-Agent: crawlora-duckduckgo-php/0.1.1',
+            'User-Agent: crawlora-duckduckgo-php/0.1.2',
             'Accept: ' . (in_array('text/plain', $operation['produces'], true) ? 'application/json, text/plain' : 'application/json'),
         ];
         if ($payload !== null) {

@@ -8,7 +8,7 @@ The official Java client for Crawlora's hosted DuckDuckGo API. It exposes 6 endp
 <dependency>
   <groupId>net.crawlora</groupId>
   <artifactId>crawlora-duckduckgo</artifactId>
-  <version>0.1.1</version>
+  <version>0.1.2</version>
 </dependency>
 ```
 

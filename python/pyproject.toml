@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "crawlora-duckduckgo"
-version = "0.1.1"
+version = "0.1.2"
 description = "Crawlora DuckDuckGo API client with 6 endpoints for web, news, image, video, and shopping search plus query suggestions"
 readme = "README.md"
 keywords = ["crawlora", "api-client", "sdk", "web-scraping", "scraping-api", "duckduckgo", "duckduckgo-api", "duckduckgo-scraper", "duckduckgo-data", "duckduckgo-web", "duckduckgo-news", "duckduckgo-image", "duckduckgo-video", "duckduckgo-shopping-search", "duckduckgo-query-suggestions"]

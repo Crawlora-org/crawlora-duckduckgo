@@ -1,11 +1,11 @@
 {
   "async_class_name": "AsyncDuckDuckGoClient",
   "class_name": "DuckDuckGoClient",
-  "contract_revision": "sha256:5c59c5ab37b393d0e018ef034c0638d14301e8a02f310239be2ce08110cd77b9",
+  "contract_revision": "sha256:71470ec99f66e5aa4c627d7f3ca1a3a3597fd90fbe1bb7216ff2acb238bdecf1",
   "display_name": "DuckDuckGo",
   "general_sdk_version": "1.46.0-sdk.1",
   "golang_module_name": "github.com/Crawlora-org/crawlora-duckduckgo",
-  "golang_version": "0.1.1",
+  "golang_version": "0.1.2",
   "group_name": "duckduckgo",
   "java_description": "Java client for Crawlora's hosted DuckDuckGo API, with web, news, image, video, and shopping search plus query suggestions. Requires a Crawlora API key.",
   "maven_artifact_id": "crawlora-duckduckgo",
@@ -16,18 +16,25 @@
   "php_repository": "https://github.com/Crawlora-org/crawlora-duckduckgo",
   "platform": "duckduckgo",
   "python_name": "crawlora-duckduckgo",
-  "repository": "https://github.com/Crawlora-org/crawlora-duckduckgo",
-  "ruby_gem_name": "crawlora-duckduckgo",
-  "source_contract_sha256": "8f37412b34b49c443ff8c115dadaf9b6a2a82fd767af53137ce5e9f6b288ea20",
-  "version": "0.1.1",
   "releases": [
     {
-      "version": "0.1.1",
-      "date": "2026-10-12",
+      "changes": [
+        "Updated operation contracts: duckduckgo-image, duckduckgo-news, duckduckgo-search, duckduckgo-shopping, duckduckgo-video."
+      ],
+      "date": "2026-10-14",
+      "version": "0.1.2"
+    },
+    {
       "changes": [
         "Publish npm releases through GitHub Actions with provenance.",
         "Expand API endpoint documentation and package metadata for discoverability."
-      ]
+      ],
+      "date": "2026-10-12",
+      "version": "0.1.1"
     }
-  ]
+  ],
+  "repository": "https://github.com/Crawlora-org/crawlora-duckduckgo",
+  "ruby_gem_name": "crawlora-duckduckgo",
+  "source_contract_sha256": "edf94a318d422a94556084a811322eca2f95fd990cb37ad55abc6475c46b633a",
+  "version": "0.1.2"
 }

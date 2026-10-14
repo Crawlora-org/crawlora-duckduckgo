@@ -8,7 +8,7 @@ Official Crawlora client packages for the hosted DuckDuckGo API. Access 6 API en
 - Python: [`crawlora-duckduckgo`](python/README.md)
 - Go: [`github.com/Crawlora-org/crawlora-duckduckgo`](go.mod)
 - Ruby: [`crawlora-duckduckgo`](ruby/README.md)
-- Java: [`net.crawlora:crawlora-duckduckgo:0.1.1`](java/README.md)
+- Java: [`net.crawlora:crawlora-duckduckgo:0.1.2`](java/README.md)
 - PHP: [`crawlora/duckduckgo`](php/README.md)
 
 For installation and runnable examples, use the README for your language. See the [API endpoint and parameter reference](docs/usage.md) for shared operation details.

@@ -2,7 +2,7 @@
 
 This reference lists all 6 public DuckDuckGo API endpoints exposed by the `@crawlora-org/duckduckgo` and `crawlora-duckduckgo` packages, covering web, news, image, video, and shopping search plus query suggestions. The clients call Crawlora's hosted API. Set `CRAWLORA_API_KEY` to a key for your Crawlora account before making requests. Service usage is billed under that account. These clients do not run a browser or scrape DuckDuckGo locally; Crawlora is independent from and not endorsed by DuckDuckGo or its owners.
 
-The package tracks the public API contract revision `sha256:5c59c5ab37b393d0e018ef034c0638d14301e8a02f310239be2ce08110cd77b9` bundled with release `0.1.1`. Maintainers can preview daily contract updates with the repository's `Sync live API contract` workflow; unchanged contracts do not produce package releases.
+The package tracks the public API contract revision `sha256:71470ec99f66e5aa4c627d7f3ca1a3a3597fd90fbe1bb7216ff2acb238bdecf1` bundled with release `0.1.2`. Maintainers can preview daily contract updates with the repository's `Sync live API contract` workflow; unchanged contracts do not produce package releases.
 
 Both packages expose all 6 operations in the bundled API contract. JavaScript uses camelCase methods and Python uses snake_case methods. Methods also remain available through the `duckduckgo` group and the generated `Client` alias.
 

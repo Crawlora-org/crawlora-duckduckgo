@@ -7,7 +7,7 @@ from .async_client import AsyncCrawloraClient
 class DuckDuckGoClient(CrawloraClient):
     """Synchronous DuckDuckGo API client."""
     def __init__(self, *args: Any, **kwargs: Any) -> None:
-        kwargs.setdefault('user_agent', 'crawlora-duckduckgo-python/0.1.1')
+        kwargs.setdefault('user_agent', 'crawlora-duckduckgo-python/0.1.2')
         super().__init__(*args, **kwargs)
 
     def image(self, **params: Any) -> Any:
@@ -49,7 +49,7 @@ class DuckDuckGoClient(CrawloraClient):
 class AsyncDuckDuckGoClient(AsyncCrawloraClient):
     """Asynchronous DuckDuckGo API client."""
     def __init__(self, *args: Any, **kwargs: Any) -> None:
-        kwargs.setdefault('user_agent', 'crawlora-duckduckgo-python/0.1.1')
+        kwargs.setdefault('user_agent', 'crawlora-duckduckgo-python/0.1.2')
         super().__init__(*args, **kwargs)
 
     async def image(self, **params: Any) -> Any:
